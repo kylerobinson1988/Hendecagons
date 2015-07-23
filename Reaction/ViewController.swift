@@ -1,4 +1,4 @@
-//
+
 //  ViewController.swift
 //  Reaction
 //
@@ -11,29 +11,44 @@ import GameKit
 
 class ViewController: UIViewController, GKGameCenterControllerDelegate {
 
+    @IBOutlet weak var logo: UILabel!
     @IBOutlet weak var leaderboardButton: UIButton!
-    @IBOutlet weak var goLabel: HendecagonButton!
+    @IBOutlet weak var goLabel: UIButton!
     @IBOutlet weak var topScoreLabel: UILabel!
+    @IBOutlet weak var rotatingHendecagon: RotatingHendecagon!
+    
+    var rotatingShape = false
+    var stopRotating = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        rotatingHendecagon.rotate360Degrees(completionDelegate: self)
+        
         topScoreLabel.alpha = 0
         
-//        goLabel.frame.size.width = 0
-//        goLabel.frame.size.height = 0
-//        goLabel.center = view.center
+        goLabel.frame.size.width = 0
+        goLabel.frame.size.height = 0
+        goLabel.center = view.center
         goLabel.alpha = 0
         goLabel.transform = CGAffineTransformMakeScale(0.0, 0.0)
+        
         
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             
             self.goLabel.alpha = 1
             self.goLabel.transform = CGAffineTransformMakeScale(1.0, 1.0)
             
-//            self.logo.alpha = 1
-            
         })
+        
+        self.logo.center.y -= self.view.frame.height
+
+        UIView.animateWithDuration(2.0, animations: { () -> Void in
+            
+            self.logo.center.y += self.view.frame.height
+
+        })
+        
         
         GKLocalPlayer.localPlayer().authenticateHandler = { (viewController, error) -> Void in
             
@@ -52,7 +67,36 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         
         
     }
+    
+    func refresh() {
+        
+        if self.rotatingShape == false {
+            
+            self.rotatingHendecagon.rotate360Degrees(completionDelegate: self)
 
+            self.rotatingShape = true
+            
+        }
+    }
+    
+    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        if self.stopRotating == false {
+            
+            self.rotatingHendecagon.rotate360Degrees(completionDelegate: self)
+        
+        } else {
+        
+            self.reset()
+        
+        }
+        
+    }
+    
+    func reset() {
+        self.rotatingShape = false
+        self.stopRotating = false
+    }
+    
     override func viewWillAppear(animated: Bool) {
         
         loadScore()
@@ -81,7 +125,6 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
                                     self.topScoreLabel.alpha = 1
                                     
                                 })
-                            
                             
                         }
                         

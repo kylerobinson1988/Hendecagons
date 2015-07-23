@@ -6,13 +6,52 @@
     <customFonts key="customFonts">
         <mutableArray key="Geomancy - Extra Bold.otf">
             <string>Geomancy-ExtraBold</string>
+            <string>Geomancy-ExtraBold</string>
         </mutableArray>
         <mutableArray key="Geomancy - Hairline.otf">
+            <string>Geomancy-Hairline</string>
             <string>Geomancy-Hairline</string>
             <string>Geomancy-Hairline</string>
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="qVP-W3-mGF">
+            <objects>
+                <viewController id="eWh-6C-xSg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gx8-a6-kt9"/>
+                        <viewControllerLayoutGuide type="bottom" id="uML-If-9BV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Os4-ei-EgC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZ1-Ks-Df4" customClass="RotatingHendecagon" customModule="Reaction" customModuleProvider="target">
+                                <rect key="frame" x="81" y="150" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="SS8-hv-cNg"/>
+                                    <constraint firstAttribute="height" constant="200" id="bsv-Vm-Uqf"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="rZ1-Ks-Df4" secondAttribute="centerX" id="7dF-io-8PS"/>
+                            <constraint firstAttribute="centerY" secondItem="rZ1-Ks-Df4" secondAttribute="centerY" id="W1a-rf-hgU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLf-IF-byJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192" y="-370"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -25,42 +64,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11O-tr-Agp" customClass="HendecagonButton" customModule="Reaction" customModuleProvider="target">
-                                <rect key="frame" x="200" y="200" width="200" height="200"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="MRk-yT-UVO"/>
-                                    <constraint firstAttribute="height" constant="200" id="XJ3-XV-0ca"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="50"/>
-                                <state key="normal" title="GO">
-                                    <color key="titleColor" red="0.47679549980000002" green="0.86227321649999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="goButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nY4-c2-3Bn"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUA-3n-Hxs">
                                 <rect key="frame" x="8" y="498" width="584" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="94" id="OE1-6K-jpd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="70"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hendecagons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yD-SP-muU">
-                                <rect key="frame" x="8" y="20" width="584" height="94"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="94" id="HPJ-GO-U9v"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Geomancy-ExtraBold" family="Geomancy" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -77,18 +86,52 @@
                                     <action selector="leaderboardButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sp4-TH-3fs"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hendecagons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yD-SP-muU">
+                                <rect key="frame" x="8" y="78" width="584" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="HPJ-GO-U9v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-ExtraBold" family="Geomancy" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPh-ft-7Mh" customClass="RotatingHendecagon" customModule="Reaction" customModuleProvider="target">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="nt1-xY-q7u"/>
+                                    <constraint firstAttribute="height" constant="200" id="zz8-js-aLU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6L-9I-36R">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Kpa-bR-sHd"/>
+                                    <constraint firstAttribute="width" constant="200" id="zDc-Ed-5DG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="50"/>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" red="0.26884445680000002" green="0.49604702290000002" blue="0.68761837120000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ra8-hY-Dfj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aKx-yG-9Jx" secondAttribute="trailing" constant="30" id="20d-HE-0PP"/>
+                            <constraint firstAttribute="centerY" secondItem="zPh-ft-7Mh" secondAttribute="centerY" id="EeA-yP-zqN"/>
                             <constraint firstItem="gUA-3n-Hxs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="Ghg-DY-HBG"/>
                             <constraint firstAttribute="trailing" secondItem="0yD-SP-muU" secondAttribute="trailing" constant="8" id="M8f-By-SNW"/>
                             <constraint firstItem="0yD-SP-muU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="W66-rc-6By"/>
-                            <constraint firstAttribute="centerX" secondItem="11O-tr-Agp" secondAttribute="centerX" id="gff-6a-wrU"/>
-                            <constraint firstAttribute="centerY" secondItem="11O-tr-Agp" secondAttribute="centerY" id="gz8-w4-XH5"/>
+                            <constraint firstAttribute="centerX" secondItem="A6L-9I-36R" secondAttribute="centerX" id="ZzA-ge-ZoC"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gUA-3n-Hxs" secondAttribute="bottom" constant="8" id="io0-ee-th3"/>
                             <constraint firstAttribute="trailing" secondItem="gUA-3n-Hxs" secondAttribute="trailing" constant="8" id="kWz-dT-zzx"/>
-                            <constraint firstItem="0yD-SP-muU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="yMM-62-Kue"/>
+                            <constraint firstAttribute="centerY" secondItem="A6L-9I-36R" secondAttribute="centerY" id="mLv-L9-HKm"/>
+                            <constraint firstAttribute="centerX" secondItem="zPh-ft-7Mh" secondAttribute="centerX" id="wNZ-Gk-fhh"/>
+                            <constraint firstItem="0yD-SP-muU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="58" id="yMM-62-Kue"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aKx-yG-9Jx" secondAttribute="bottom" constant="25" id="zk9-FG-2xo"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -108,8 +151,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="cfg-lu-r1S"/>
                     <connections>
-                        <outlet property="goLabel" destination="11O-tr-Agp" id="M64-hh-a6M"/>
+                        <outlet property="goLabel" destination="A6L-9I-36R" id="9fo-6e-0yg"/>
                         <outlet property="leaderboardButton" destination="aKx-yG-9Jx" id="sXN-dl-0zT"/>
+                        <outlet property="logo" destination="0yD-SP-muU" id="q43-xc-sbX"/>
+                        <outlet property="rotatingHendecagon" destination="zPh-ft-7Mh" id="xAg-wI-94O"/>
                         <outlet property="topScoreLabel" destination="gUA-3n-Hxs" id="msh-mB-gJx"/>
                     </connections>
                 </viewController>
@@ -128,7 +173,35 @@
                     <view key="view" contentMode="scaleToFill" id="AzN-4d-wmz" customClass="GradientView" customModule="Reaction" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-J2-wYI">
+                                <rect key="frame" x="8" y="522" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="rGt-8x-DdX"/>
+                                    <constraint firstAttribute="height" constant="70" id="tTM-BE-Cms"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-ExtraBold" family="Geomancy" pointSize="39"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPy-3K-dTU">
+                                <rect key="frame" x="8" y="494" width="70" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="0F1-ok-8iT"/>
+                                    <constraint firstAttribute="height" constant="20" id="6yR-f1-7Wc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Re-43-Z8P" firstAttribute="top" secondItem="KiN-J2-wYI" secondAttribute="bottom" constant="8" id="DNX-e9-hhj"/>
+                            <constraint firstItem="KiN-J2-wYI" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" constant="8" id="HdJ-71-kIq"/>
+                            <constraint firstItem="KiN-J2-wYI" firstAttribute="top" secondItem="EPy-3K-dTU" secondAttribute="bottom" constant="8" id="c88-Wb-A6q"/>
+                            <constraint firstItem="EPy-3K-dTU" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" constant="8" id="wtN-Kg-zq3"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
                                 <point key="value" x="0.0" y="1"/>
@@ -144,6 +217,9 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="levelLabel" destination="KiN-J2-wYI" id="lgh-C2-BZb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7v-RA-wL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

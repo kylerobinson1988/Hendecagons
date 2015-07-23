@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		91031FD71B44803D00F2FE36 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91031FD61B44803D00F2FE36 /* GameKit.framework */; };
-		91031FD91B448CBC00F2FE36 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91031FD81B448CBC00F2FE36 /* LogoView.swift */; };
+		9146FCE71B60428E0013D73B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146FCE61B60428E0013D73B /* View.swift */; };
+		9146FCE91B6060600013D73B /* hendecagon_still.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9146FCE81B6060600013D73B /* hendecagon_still.jpg */; };
 		91B1B5401B45E2F500958D38 /* Geomancy - Extra Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B53E1B45E2F500958D38 /* Geomancy - Extra Bold.otf */; };
 		91B1B5411B45E2F500958D38 /* Geomancy - Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B53F1B45E2F500958D38 /* Geomancy - Hairline.otf */; };
+		91B1B5561B47758B00958D38 /* RotatingHendecagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5551B47758B00958D38 /* RotatingHendecagon.swift */; };
 		91B5DDB31B45700A00828261 /* gamecenter.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B5DDB21B45700A00828261 /* gamecenter.png */; };
 		91D110D31B4423EF00F5C51A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110D21B4423EF00F5C51A /* AppDelegate.swift */; };
 		91D110D51B4423EF00F5C51A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110D41B4423EF00F5C51A /* ViewController.swift */; };
@@ -21,6 +23,7 @@
 		91D110F41B44271500F5C51A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110F31B44271500F5C51A /* GradientView.swift */; };
 		91D110F91B442FB900F5C51A /* HendecagonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110F81B442FB900F5C51A /* HendecagonButton.swift */; };
 		91D110FB1B44396E00F5C51A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110FA1B44396E00F5C51A /* GameViewController.swift */; };
+		91F5CBE51B506CB10009A178 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F5CBE41B506CB10009A178 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +38,11 @@
 
 /* Begin PBXFileReference section */
 		91031FD61B44803D00F2FE36 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		91031FD81B448CBC00F2FE36 /* LogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		9146FCE61B60428E0013D73B /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		9146FCE81B6060600013D73B /* hendecagon_still.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hendecagon_still.jpg; sourceTree = "<group>"; };
 		91B1B53E1B45E2F500958D38 /* Geomancy - Extra Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomancy - Extra Bold.otf"; sourceTree = "<group>"; };
 		91B1B53F1B45E2F500958D38 /* Geomancy - Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomancy - Hairline.otf"; sourceTree = "<group>"; };
+		91B1B5551B47758B00958D38 /* RotatingHendecagon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingHendecagon.swift; sourceTree = "<group>"; };
 		91B5DDB21B45700A00828261 /* gamecenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gamecenter.png; sourceTree = "<group>"; };
 		91D110CD1B4423EF00F5C51A /* Reaction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reaction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91D110D11B4423EF00F5C51A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 		91D110F31B44271500F5C51A /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		91D110F81B442FB900F5C51A /* HendecagonButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HendecagonButton.swift; sourceTree = "<group>"; };
 		91D110FA1B44396E00F5C51A /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		91F5CBE41B506CB10009A178 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				91D110D61B4423EF00F5C51A /* Main.storyboard */,
+				91F5CBE41B506CB10009A178 /* TestViewController.swift */,
 				91D110D41B4423EF00F5C51A /* ViewController.swift */,
 				91D110FA1B44396E00F5C51A /* GameViewController.swift */,
 				91D110D21B4423EF00F5C51A /* AppDelegate.swift */,
@@ -109,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				91D110D91B4423EF00F5C51A /* Images.xcassets */,
+				9146FCE81B6060600013D73B /* hendecagon_still.jpg */,
 				91D110DB1B4423EF00F5C51A /* LaunchScreen.xib */,
 				91B5DDB21B45700A00828261 /* gamecenter.png */,
 				91B1B53E1B45E2F500958D38 /* Geomancy - Extra Bold.otf */,
@@ -140,7 +148,8 @@
 			children = (
 				91D110F31B44271500F5C51A /* GradientView.swift */,
 				91D110F81B442FB900F5C51A /* HendecagonButton.swift */,
-				91031FD81B448CBC00F2FE36 /* LogoView.swift */,
+				91B1B5551B47758B00958D38 /* RotatingHendecagon.swift */,
+				9146FCE61B60428E0013D73B /* View.swift */,
 			);
 			name = IBDesignable;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 				91B5DDB31B45700A00828261 /* gamecenter.png in Resources */,
 				91D110D81B4423EF00F5C51A /* Main.storyboard in Resources */,
 				91B1B5401B45E2F500958D38 /* Geomancy - Extra Bold.otf in Resources */,
+				9146FCE91B6060600013D73B /* hendecagon_still.jpg in Resources */,
 				91D110DD1B4423EF00F5C51A /* LaunchScreen.xib in Resources */,
 				91D110DA1B4423EF00F5C51A /* Images.xcassets in Resources */,
 			);
@@ -258,9 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				91D110FB1B44396E00F5C51A /* GameViewController.swift in Sources */,
-				91031FD91B448CBC00F2FE36 /* LogoView.swift in Sources */,
+				91F5CBE51B506CB10009A178 /* TestViewController.swift in Sources */,
 				91D110D51B4423EF00F5C51A /* ViewController.swift in Sources */,
 				91D110D31B4423EF00F5C51A /* AppDelegate.swift in Sources */,
+				9146FCE71B60428E0013D73B /* View.swift in Sources */,
+				91B1B5561B47758B00958D38 /* RotatingHendecagon.swift in Sources */,
 				91D110F41B44271500F5C51A /* GradientView.swift in Sources */,
 				91D110F91B442FB900F5C51A /* HendecagonButton.swift in Sources */,
 			);

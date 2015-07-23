@@ -11,6 +11,7 @@ import GameKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var levelLabel: UILabel!
     var currentScore = 0 {
         
         didSet {
@@ -32,8 +33,6 @@ class GameViewController: UIViewController {
     }
     
     var scoreLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 100))
-
-//    var levelLabel = UILabel(frame: CGRect(x: 100, y: 0, width: , height: <#CGFloat#>))
     
     var timerBar = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 10))
     
@@ -47,7 +46,7 @@ class GameViewController: UIViewController {
         view.addSubview(timerBar)
         
         scoreLabel.textColor = UIColor.whiteColor()
-        scoreLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 80)
+        scoreLabel.font = UIFont(name: "Geomancy-Hairline", size: 80)
         scoreLabel.text = "0"
         scoreLabel.frame.origin.y = view.frame.height - 120
         scoreLabel.frame.size.width = view.frame.width
@@ -81,13 +80,20 @@ class GameViewController: UIViewController {
         
         runTimer(2.0)
         
-        var cW = (view.frame.width - 120) / 2
+        var cW = (view.frame.width - 120) / 3
         var cR = cW / 2
         
-        // Top left, top right, bottom left, bottom right
-        var directions: [(CGFloat,CGFloat)] = [(-1,-1),(1,-1),(-1,1),(1,1)]
+        // Inner five:  Top, Top left, Bottom left, Bottom right, Upper right
+        // Outer six: Top, Top left, Bottom left, Bottom, Bottom Right, Top Right
         
-        for c in 0..<4 {
+        var directions: [(CGFloat, CGFloat)] = [(0,3.5),(-2.5,3),(-2.5,-3),(0,-3.5),(2.5,-3),(2.5,3),(0,1.5),(-1.75,0.5),(-1,-1.5),(1,-1.5),(1.75,0.5)]
+        
+        
+//        var directions: [(CGFloat,CGFloat)] = [(-1,-1),(1,-1),(-1,1),(1,1)]
+        
+//        [()]
+        
+        for c in 0..<11 {
             
             var circle = HendecagonButton()
             circle.choice = c
@@ -106,9 +112,6 @@ class GameViewController: UIViewController {
             UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
                 
                 circle.alpha = 0.5
-                
-//                circle.backgroundColor = UIColor(patternImage: UIImage(named: "Porkins.jpg")!)
-                
                 circle.frame.size.width = cW
                 circle.frame.size.height = cW
                 
@@ -201,7 +204,7 @@ class GameViewController: UIViewController {
         gameOverLabel.textAlignment = .Center
         gameOverLabel.textColor = UIColor.whiteColor()
         gameOverLabel.text = "Game Over"
-        gameOverLabel.font = UIFont(name: "HelveticNeue-UltraLight", size: 100)
+        gameOverLabel.font = UIFont(name: "Geomancy-Hairline", size: 50)
         
         gameOverLabel.alpha = 0
         
@@ -214,7 +217,7 @@ class GameViewController: UIViewController {
             
         }) { (finished) -> Void in
             
-            UIView.animateWithDuration(1.6, animations: { () -> Void in
+            UIView.animateWithDuration(2.5, animations: { () -> Void in
                 
                 gameOverLabel.alpha = 0
                 

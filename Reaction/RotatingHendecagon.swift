@@ -1,37 +1,32 @@
 //
-//  HendecagonButton.swift
+//  RotatingHendecagon.swift
 //  Reaction
 //
-//  Created by Kyle Brooks Robinson on 7/1/15.
+//  Created by Kyle Brooks Robinson on 7/3/15.
 //  Copyright (c) 2015 Kyle Brooks Robinson. All rights reserved.
 //
 
 import UIKit
 
-@IBDesignable class HendecagonButton: UIButton {
-
+@IBDesignable class RotatingHendecagon: UIView {
+    
+    let shapeLayer = CAShapeLayer()
+    let maskLayer = CAShapeLayer()
+    var hendecPath = UIBezierPath()
+    
     var choice: Int!
+    var spinWithOptions: Bool?
     
     @IBInspectable var fillColor: UIColor = UIColor.whiteColor()
-    
-//    override func drawRect(rect: CGRect) {
-//        
-//        let context = UIGraphicsGetCurrentContext()
-//        
-//        fillColor.set()
-//        
-//        CGContextFillEllipseInRect(context, rect)
-//        
-//    }
     
     override func drawRect(rect: CGRect) {
         
         var context = UIGraphicsGetCurrentContext()
         
-        drawPolygonBezier(x: CGRectGetMidX(rect), y: CGRectGetMidY(rect), radius: CGRectGetWidth(rect) / 2, sides: 11, color: fillColor)
+        drawPolygonBezier(x: CGRectGetMidX(rect), y: CGRectGetMidY(rect), radius: CGRectGetWidth(rect) / 2, sides: 11, color: UIColor.whiteColor())
         
     }
-
+    
     func drawPolygonBezier(#x:CGFloat, y:CGFloat, radius:CGFloat, sides:Int, color:UIColor) {
         let path = polygonPath(x: x, y: y, radius: radius, sides: sides)
         let bez = UIBezierPath(CGPath: path)
@@ -51,7 +46,7 @@ import UIKit
         CGPathCloseSubpath(path)
         return path
     }
-
+    
     func degree2radian(a:CGFloat)->CGFloat {
         let b = CGFloat(M_PI) * a/180
         return b
@@ -73,5 +68,25 @@ import UIKit
         return points
     }
     
+
+
+    
+//    func prepareForEditing(editing:Bool){
+//        
+//        let animation = CABasicAnimation(keyPath: "path")
+//        animation.duration = 10
+//        
+        // Your new shape here
+//        animation.toValue = 
+//        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        
+        // The next two line preserves the final shape of animation,
+        // if you remove it the shape will return to the original shape after the animation finished
+//        animation.fillMode = kCAFillModeForwards
+//        animation.removedOnCompletion = false
+//        
+//        shapeLayer.addAnimation(animation, forKey: nil)
+//        maskLayer.addAnimation(animation, forKey: nil)
+//    }
     
 }

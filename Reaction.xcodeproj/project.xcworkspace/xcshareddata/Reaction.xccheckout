@@ -10,31 +10,31 @@
 	<string>Reaction</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>75E2E720EA706043D69087099A989DD493909AE3</key>
-		<string>https://github.com/kylerobinson1988/SimpleApps2.git</string>
+		<key>EEBF1B0BBA722089085717DAC4339C2765ACCE5B</key>
+		<string>https://github.com/kylerobinson1988/Hendecagons.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Reaction/Reaction.xcodeproj</string>
+	<string>Reaction.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>75E2E720EA706043D69087099A989DD493909AE3</key>
-		<string>../../..</string>
+		<key>EEBF1B0BBA722089085717DAC4339C2765ACCE5B</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/kylerobinson1988/SimpleApps2.git</string>
+	<string>https://github.com/kylerobinson1988/Hendecagons.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>75E2E720EA706043D69087099A989DD493909AE3</string>
+	<string>EEBF1B0BBA722089085717DAC4339C2765ACCE5B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>75E2E720EA706043D69087099A989DD493909AE3</string>
+			<string>EEBF1B0BBA722089085717DAC4339C2765ACCE5B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>SimpleApps2</string>
+			<string>Hendecagons</string>
 		</dict>
 	</array>
 </dict>
