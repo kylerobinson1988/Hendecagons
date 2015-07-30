@@ -11,7 +11,9 @@ import GameKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet var background: GradientView!
     @IBOutlet weak var levelLabel: UILabel!
+    
     var currentScore = 0 {
         
         didSet {
@@ -26,7 +28,7 @@ class GameViewController: UIViewController {
         
         didSet {
             
-            // Update the Level label here.
+            levelLabel.text = "\(currentLevel)"
             
         }
         
@@ -34,13 +36,13 @@ class GameViewController: UIViewController {
     
     var scoreLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 100))
     
-    var timerBar = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 10))
+    var timerBar = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
     
     var currentCircles: [HendecagonButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         timerBar.backgroundColor = UIColor.whiteColor()
         
         view.addSubview(timerBar)
@@ -78,47 +80,43 @@ class GameViewController: UIViewController {
 
     func animateNewCirclesIn() {
         
-        runTimer(2.0)
+        let levelAdjusted = (currentLevel - 1)
+        
+        let adjustedTimeInterval: NSTimeInterval = NSTimeInterval((levelInfo[levelAdjusted]["levelTimer"] as! Double))
+        
+        runTimer(adjustedTimeInterval)
         
         var cW = (view.frame.width - 120) / 3
         var cR = cW / 2
         
-        // Inner five:  Top, Top left, Bottom left, Bottom right, Upper right
-        // Outer six: Top, Top left, Bottom left, Bottom, Bottom Right, Top Right
+        let directions: [(CGFloat,CGFloat)] = levelCoordinates[levelAdjusted]
         
-        var directions: [(CGFloat, CGFloat)] = [(0,3.5),(-2.5,3),(-2.5,-3),(0,-3.5),(2.5,-3),(2.5,3),(0,1.5),(-1.75,0.5),(-1,-1.5),(1,-1.5),(1.75,0.5)]
-        
-        
-//        var directions: [(CGFloat,CGFloat)] = [(-1,-1),(1,-1),(-1,1),(1,1)]
-        
-//        [()]
-        
-        for c in 0..<11 {
+        for c in 0..<directions.count {
             
-            var circle = HendecagonButton()
-            circle.choice = c
-            circle.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-            circle.center = view.center
-            view.addSubview(circle)
+            var gamePiece = HendecagonButton()
+            gamePiece.choice = c
+            gamePiece.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            gamePiece.center = view.center
+            view.addSubview(gamePiece)
             
-            circle.alpha = c == currentCorrectButton ? 1.0 : 0.5
+            gamePiece.alpha = c == currentCorrectButton ? 1.0 : 0.5
             
-            circle.addTarget(self, action: "tapCircle:", forControlEvents: .TouchUpInside)
+            gamePiece.addTarget(self, action: "tapCircle:", forControlEvents: .TouchUpInside)
             
-            currentCircles.append(circle)
+            currentCircles.append(gamePiece)
             
             let (dx, dy) = directions[c]
             
             UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.AllowUserInteraction, animations: { () -> Void in
                 
-                circle.alpha = 0.5
-                circle.frame.size.width = cW
-                circle.frame.size.height = cW
+                gamePiece.alpha = 0.5
+                gamePiece.frame.size.width = cW
+                gamePiece.frame.size.height = cW
                 
                 let x = self.view.center.x + dx * (cR + 10)
                 let y = self.view.center.y + dy * (cR + 10)
                 
-                circle.center = CGPoint(x: x, y: y)
+                gamePiece.center = CGPoint(x: x, y: y)
 
             }, completion: nil)
             
@@ -155,11 +153,6 @@ class GameViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     var currentCorrectButton: Int = 0
     
     func tapCircle(circle: HendecagonButton) {
@@ -176,14 +169,50 @@ class GameViewController: UIViewController {
             
             GKScore.reportScores([reportScore], withCompletionHandler: { (error) -> Void in
                 
-                println("reported")
+//                println("reported")
                 
             })
             
-            currentCorrectButton = Int(arc4random_uniform(4))
+            var levelAdjusted = (currentLevel - 1)
+            
+            var buttonCount = UInt32(levelInfo[levelAdjusted]["pieceCount"] as! Double)
+            
+            currentCorrectButton = Int(arc4random_uniform(buttonCount))
             
             animateOldCirclesOut()
+            
             currentCircles = []
+            
+            let finishPoint = levelInfo[levelAdjusted]["levelFinish"] as! Int
+            
+            if currentScore == finishPoint {
+                
+                currentLevel = currentLevel + 1
+                println("The level just went up!")
+                println(currentLevel)
+                
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
+                
+                    self.background.firstColor = backgroundColors[levelAdjusted]["color1"]!
+                    self.background.secondColor = backgroundColors[levelAdjusted]["color2"]!
+                    
+                    let startX = backgroundCoordinates[levelAdjusted]["startX"] as! CGFloat
+                    let startY = backgroundCoordinates[levelAdjusted]["startY"] as! CGFloat
+                    let endX = backgroundCoordinates[levelAdjusted]["endX"] as! CGFloat
+                    let endY = backgroundCoordinates[levelAdjusted]["endY"] as! CGFloat
+                    
+                    self.background.startPoint = CGPoint(x: startX, y: startY)
+                    self.background.endPoint = CGPoint(x: startX, y: startY)
+                    
+                    let rect = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
+                    self.background.drawRect(rect)
+                    
+                    println("The background should have just changed.")
+                    
+                })
+                
+            }
+            
             animateNewCirclesIn()
             
         } else {
@@ -191,8 +220,6 @@ class GameViewController: UIViewController {
             gameOver()
             
         }
-        
-        
         
     }
     
@@ -232,7 +259,7 @@ class GameViewController: UIViewController {
     
     func endGame() {
         
-        if let startVC = storyboard?.instantiateViewControllerWithIdentifier("StartVC") as? ViewController {
+        if let startVC = storyboard?.instantiateViewControllerWithIdentifier("StartVC") as? MainMenuViewController {
         
             navigationController?.viewControllers = [startVC]
         
