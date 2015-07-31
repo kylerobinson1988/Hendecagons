@@ -10,6 +10,7 @@ import UIKit
 import GameKit
 import Parse
 import Bolts
+import AVFoundation
 
 class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
 
@@ -19,8 +20,13 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
     @IBOutlet weak var topScoreLabel: UILabel!
     @IBOutlet weak var rotatingHendecagon: RotatingHendecagon!
     
+    var mainMenu = AVAudioPlayer()
+    var boom = AVAudioPlayer()
+    
     var rotatingShape = false
     var stopRotating = false
+    var parseInfo1 = false
+    var parseInfo2 = false
     
     var responseInfo = []
     
@@ -32,6 +38,9 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
         rotatingHendecagon.rotate360Degrees(completionDelegate: self)
         
         topScoreLabel.alpha = 0
+        
+        mainMenu = setupAudioPlayerWithFile("mainMenu", "wav")
+        boom = setupAudioPlayerWithFile("boom", "wav")
         
         goLabel.frame.size.width = 0
         goLabel.frame.size.height = 0
@@ -51,6 +60,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
         UIView.animateWithDuration(2.0, animations: { () -> Void in
             
             self.logo.center.y += self.view.frame.height
+            self.mainMenu.play()
 
         })
         
@@ -145,10 +155,21 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
     }
     
     @IBAction func goButton(sender: AnyObject) {
-    
-        if let gameVC = storyboard?.instantiateViewControllerWithIdentifier("GameVC") as? GameViewController {
+        
+        if parseInfo1 && parseInfo2 == true {
             
-            navigationController?.viewControllers = [gameVC]
+            if let gameVC = storyboard?.instantiateViewControllerWithIdentifier("GameVC") as? GameViewController {
+                
+                boom.play()
+                
+                UIView.animateWithDuration(2.5, animations: { () -> Void in
+                    
+                    navigationController?.viewControllers = [gameVC]
+
+                    
+                })
+                
+            }
             
         }
     
@@ -191,6 +212,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
                         let levelNumber = item["levelNumber"] as! Int
                         let pieceCount = item["pieceCount"] as! Int
                         let levelTimer = item["timer"] as! Double
+                        let sides = item["sides"] as! Int
                         
                         var coordinates: [(CGFloat, CGFloat)] = []
                         
@@ -288,6 +310,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
                             "levelNumber": levelNumber,
                             "pieceCount": pieceCount,
                             "levelTimer": levelTimer,
+                            "sides": sides,
                             
                         ]
                         
@@ -296,8 +319,9 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
                         
                     }
                     
-                    println("Level Info! \(levelInfo)")
-                    println("Coordinates! \(levelCoordinates)")
+                    self.parseInfo1 = true
+//                    println("Level Info! \(levelInfo)")
+//                    println("Coordinates! \(levelCoordinates)")
                     
                 }
                 
@@ -310,6 +334,8 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
             if error == nil {
                 
                 if let objects = objects as? [PFObject] {
+                    
+                    println(objects)
                     
                     for item in objects {
                         
@@ -346,11 +372,12 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
                         
                     }
                     
+                    self.parseInfo2 = true
                     println("Background colors!")
-                    println(backgroundColors)
+//                    println(backgroundColors)
                     println("Background coordinates!")
-                    println(backgroundCoordinates)
-                    
+//                    println(backgroundCoordinates)
+
                 }
                 
             }
@@ -395,7 +422,20 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
 
 }
 
-
+func setupAudioPlayerWithFile(file: String, type: String) -> AVAudioPlayer {
+    
+    var path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+    var url = NSURL.fileURLWithPath(path!)
+    
+    var error: NSError?
+    
+    var audioPlayer: AVAudioPlayer?
+    
+    audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+    
+    return audioPlayer!
+    
+}
 
 
 

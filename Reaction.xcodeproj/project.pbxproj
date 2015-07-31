@@ -27,6 +27,11 @@
 		9146FD661B6905D80013D73B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146FD651B6905D80013D73B /* libz.dylib */; };
 		9146FD681B6905E20013D73B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146FD671B6905E20013D73B /* libsqlite3.dylib */; };
 		9146FD6C1B6934150013D73B /* LevelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146FD6B1B6934150013D73B /* LevelInfo.swift */; };
+		91AAC20A1B6BBDDE00F08A6C /* mainMenu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91AAC2041B6BBDDE00F08A6C /* mainMenu.wav */; };
+		91AAC20F1B6BC49200F08A6C /* boom.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91AAC20E1B6BC49200F08A6C /* boom.wav */; };
+		91AAC2111B6BC54F00F08A6C /* drumloop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91AAC2101B6BC54F00F08A6C /* drumloop.wav */; };
+		91AAC2191B6BCDA300F08A6C /* recordScratch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91AAC2181B6BCDA300F08A6C /* recordScratch.wav */; };
+		91AAC21D1B6BD14F00F08A6C /* riff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 91AAC21C1B6BD14F00F08A6C /* riff.wav */; };
 		91B1B5401B45E2F500958D38 /* Geomancy - Extra Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B53E1B45E2F500958D38 /* Geomancy - Extra Bold.otf */; };
 		91B1B5411B45E2F500958D38 /* Geomancy - Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 91B1B53F1B45E2F500958D38 /* Geomancy - Hairline.otf */; };
 		91B1B5561B47758B00958D38 /* RotatingHendecagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1B5551B47758B00958D38 /* RotatingHendecagon.swift */; };
@@ -74,6 +79,11 @@
 		9146FD651B6905D80013D73B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		9146FD671B6905E20013D73B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		9146FD6B1B6934150013D73B /* LevelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelInfo.swift; sourceTree = "<group>"; };
+		91AAC2041B6BBDDE00F08A6C /* mainMenu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mainMenu.wav; sourceTree = "<group>"; };
+		91AAC20E1B6BC49200F08A6C /* boom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = boom.wav; sourceTree = "<group>"; };
+		91AAC2101B6BC54F00F08A6C /* drumloop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drumloop.wav; sourceTree = "<group>"; };
+		91AAC2181B6BCDA300F08A6C /* recordScratch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = recordScratch.wav; sourceTree = "<group>"; };
+		91AAC21C1B6BD14F00F08A6C /* riff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = riff.wav; sourceTree = "<group>"; };
 		91B1B53E1B45E2F500958D38 /* Geomancy - Extra Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomancy - Extra Bold.otf"; sourceTree = "<group>"; };
 		91B1B53F1B45E2F500958D38 /* Geomancy - Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geomancy - Hairline.otf"; sourceTree = "<group>"; };
 		91B1B5551B47758B00958D38 /* RotatingHendecagon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingHendecagon.swift; sourceTree = "<group>"; };
@@ -190,10 +200,15 @@
 		91D110D01B4423EF00F5C51A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91AAC21C1B6BD14F00F08A6C /* riff.wav */,
+				91AAC2181B6BCDA300F08A6C /* recordScratch.wav */,
+				91AAC2101B6BC54F00F08A6C /* drumloop.wav */,
+				91AAC20E1B6BC49200F08A6C /* boom.wav */,
+				91AAC2041B6BBDDE00F08A6C /* mainMenu.wav */,
 				91D110D91B4423EF00F5C51A /* Images.xcassets */,
-				9146FCE81B6060600013D73B /* hendecagon_still.jpg */,
 				91D110DB1B4423EF00F5C51A /* LaunchScreen.xib */,
 				91B5DDB21B45700A00828261 /* gamecenter.png */,
+				9146FCE81B6060600013D73B /* hendecagon_still.jpg */,
 				91B1B53E1B45E2F500958D38 /* Geomancy - Extra Bold.otf */,
 				91B1B53F1B45E2F500958D38 /* Geomancy - Hairline.otf */,
 				91D110D11B4423EF00F5C51A /* Info.plist */,
@@ -318,11 +333,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91AAC2111B6BC54F00F08A6C /* drumloop.wav in Resources */,
+				91AAC20F1B6BC49200F08A6C /* boom.wav in Resources */,
 				91B1B5411B45E2F500958D38 /* Geomancy - Hairline.otf in Resources */,
+				91AAC21D1B6BD14F00F08A6C /* riff.wav in Resources */,
 				91B5DDB31B45700A00828261 /* gamecenter.png in Resources */,
+				91AAC2191B6BCDA300F08A6C /* recordScratch.wav in Resources */,
 				91D110D81B4423EF00F5C51A /* Main.storyboard in Resources */,
 				91B1B5401B45E2F500958D38 /* Geomancy - Extra Bold.otf in Resources */,
 				9146FCE91B6060600013D73B /* hendecagon_still.jpg in Resources */,
+				91AAC20A1B6BBDDE00F08A6C /* mainMenu.wav in Resources */,
 				91D110DD1B4423EF00F5C51A /* LaunchScreen.xib in Resources */,
 				91D110DA1B4423EF00F5C51A /* Images.xcassets in Resources */,
 			);

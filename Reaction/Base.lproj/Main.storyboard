@@ -7,46 +7,14 @@
         <mutableArray key="Geomancy - Extra Bold.otf">
             <string>Geomancy-ExtraBold</string>
             <string>Geomancy-ExtraBold</string>
+            <string>Geomancy-ExtraBold</string>
         </mutableArray>
         <mutableArray key="Geomancy - Hairline.otf">
-            <string>Geomancy-Hairline</string>
             <string>Geomancy-Hairline</string>
             <string>Geomancy-Hairline</string>
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="qVP-W3-mGF">
-            <objects>
-                <viewController id="eWh-6C-xSg" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Gx8-a6-kt9"/>
-                        <viewControllerLayoutGuide type="bottom" id="uML-If-9BV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Os4-ei-EgC" customClass="GradientView" customModule="Reaction" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                <color key="value" red="1" green="0.43137254901960786" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                <color key="value" red="1" green="0.68627450980392157" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
-                                <point key="value" x="1" y="2"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
-                                <point key="value" x="-1" y="0.0"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hLf-IF-byJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1192" y="-370"/>
-        </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -169,31 +137,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-J2-wYI">
-                                <rect key="frame" x="8" y="522" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="rGt-8x-DdX"/>
-                                    <constraint firstAttribute="height" constant="70" id="tTM-BE-Cms"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Geomancy-ExtraBold" family="Geomancy" pointSize="39"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfL-zR-XeM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPy-3K-dTU">
                                 <rect key="frame" x="8" y="494" width="70" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="0F1-ok-8iT"/>
                                     <constraint firstAttribute="height" constant="20" id="6yR-f1-7Wc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Geomancy-ExtraBold" family="Geomancy" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KiN-J2-wYI">
+                                <rect key="frame" x="8" y="522" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="rGt-8x-DdX"/>
+                                    <constraint firstAttribute="height" constant="70" id="tTM-BE-Cms"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-ExtraBold" family="Geomancy" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="mfL-zR-XeM" secondAttribute="trailing" id="6oH-0V-pdI"/>
+                            <constraint firstItem="mfL-zR-XeM" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" id="AGF-MJ-HME"/>
+                            <constraint firstItem="mfL-zR-XeM" firstAttribute="top" secondItem="AzN-4d-wmz" secondAttribute="top" id="CoI-th-Te9"/>
                             <constraint firstItem="8Re-43-Z8P" firstAttribute="top" secondItem="KiN-J2-wYI" secondAttribute="bottom" constant="8" id="DNX-e9-hhj"/>
                             <constraint firstItem="KiN-J2-wYI" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" constant="8" id="HdJ-71-kIq"/>
+                            <constraint firstAttribute="bottom" secondItem="mfL-zR-XeM" secondAttribute="bottom" id="Xbb-9Z-nos"/>
                             <constraint firstItem="KiN-J2-wYI" firstAttribute="top" secondItem="EPy-3K-dTU" secondAttribute="bottom" constant="8" id="c88-Wb-A6q"/>
                             <constraint firstItem="EPy-3K-dTU" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" constant="8" id="wtN-Kg-zq3"/>
                         </constraints>
@@ -213,8 +189,8 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="background" destination="AzN-4d-wmz" id="x16-6D-sqL"/>
-                        <outlet property="levelLabel" destination="KiN-J2-wYI" id="lgh-C2-BZb"/>
+                        <outlet property="gameView" destination="mfL-zR-XeM" id="847-tJ-86g"/>
+                        <outlet property="levelLabel" destination="KiN-J2-wYI" id="r7e-8a-6L5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7v-RA-wL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
