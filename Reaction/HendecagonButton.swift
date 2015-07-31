@@ -14,16 +14,6 @@ import UIKit
     
     @IBInspectable var fillColor: UIColor = UIColor.whiteColor()
     
-//    override func drawRect(rect: CGRect) {
-//        
-//        let context = UIGraphicsGetCurrentContext()
-//        
-//        fillColor.set()
-//        
-//        CGContextFillEllipseInRect(context, rect)
-//        
-//    }
-    
     override func drawRect(rect: CGRect) {
         
         var context = UIGraphicsGetCurrentContext()

@@ -87,8 +87,6 @@ class GameViewController: UIViewController {
         
         view.addSubview(scoreLabel)
         
-        
-        
         animateNewCirclesIn()
 
     }
@@ -306,7 +304,6 @@ class GameViewController: UIViewController {
         gradientLayer.colors = [firstColor.CGColor, secondColor.CGColor]
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint
-//        gradientLayer.locations = [0.0, 1.0]
         
         viewLayer.addSublayer(gradientLayer)
 

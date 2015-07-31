@@ -165,7 +165,6 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
                 UIView.animateWithDuration(2.5, animations: { () -> Void in
                     
                     navigationController?.viewControllers = [gameVC]
-
                     
                 })
                 
