@@ -192,7 +192,7 @@ class GameViewController: UIViewController {
             
             riff.play()
             
-            let reportScore = GKScore(leaderboardIdentifier: "circles_touched")
+            let reportScore = GKScore(leaderboardIdentifier: "hendecagonsTapped")
             
             reportScore.value = Int64(currentScore)
             

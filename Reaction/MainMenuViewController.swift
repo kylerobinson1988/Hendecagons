@@ -129,7 +129,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
             
             for leaderboard in leaderboards as! [GKLeaderboard] {
                 
-                if leaderboard.identifier == "circles_touched" {
+                if leaderboard.identifier == "hendecagonsTapped" {
                     
                     leaderboard.loadScoresWithCompletionHandler({ (scores, error) -> Void in
                         
@@ -177,7 +177,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
     @IBAction func leaderboardButtonPressed(sender: AnyObject) {
     
         let gameVC = GKGameCenterViewController()
-        gameVC.leaderboardIdentifier = "circles_touched"
+        gameVC.leaderboardIdentifier = "hendecagonsTapped"
         gameVC.gameCenterDelegate = self
         presentViewController(gameVC, animated: true, completion: nil)
     
