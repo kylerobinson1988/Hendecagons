@@ -142,6 +142,7 @@
 		9146FD481B69056C0013D73B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91031FD61B44803D00F2FE36 /* GameKit.framework */,
 				9146FD671B6905E20013D73B /* libsqlite3.dylib */,
 				9146FD651B6905D80013D73B /* libz.dylib */,
 				9146FD631B6905D20013D73B /* SystemConfiguration.framework */,
@@ -165,7 +166,6 @@
 		91D110C41B4423EF00F5C51A = {
 			isa = PBXGroup;
 			children = (
-				91031FD61B44803D00F2FE36 /* GameKit.framework */,
 				91D110CF1B4423EF00F5C51A /* Reaction */,
 				9146FD481B69056C0013D73B /* Frameworks */,
 				91D110E51B4423EF00F5C51A /* ReactionTests */,

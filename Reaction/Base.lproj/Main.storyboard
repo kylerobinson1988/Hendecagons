@@ -10,8 +10,11 @@
             <string>Geomancy-ExtraBold</string>
             <string>Geomancy-ExtraBold</string>
             <string>Geomancy-ExtraBold</string>
+            <string>Geomancy-ExtraBold</string>
         </mutableArray>
         <mutableArray key="Geomancy - Hairline.otf">
+            <string>Geomancy-Hairline</string>
+            <string>Geomancy-Hairline</string>
             <string>Geomancy-Hairline</string>
             <string>Geomancy-Hairline</string>
             <string>Geomancy-Hairline</string>
@@ -101,8 +104,8 @@
                                     <constraint firstAttribute="width" constant="50" id="69n-4s-arj"/>
                                     <constraint firstAttribute="height" constant="50" id="n3h-CD-jFj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
-                                <state key="normal" title="??">
+                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="45"/>
+                                <state key="normal" title="?">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -176,6 +179,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hG-P8-1Rn">
+                                <rect key="frame" x="8" y="522" width="584" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="yKs-7J-SyR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game OVer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7p-py-ZgF">
+                                <rect key="frame" x="8" y="175" width="584" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="LHo-cb-3vc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 PoInts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEk-Ir-T4t">
+                                <rect key="frame" x="8" y="230" width="584" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="OYb-mE-4tR"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="82" id="ikE-lw-wKf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-ExtraBold" family="Geomancy" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ikE-lw-wKf"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEVEL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPy-3K-dTU">
                                 <rect key="frame" x="8" y="494" width="70" height="20"/>
                                 <constraints>
@@ -201,11 +237,20 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mfL-zR-XeM" secondAttribute="trailing" id="6oH-0V-pdI"/>
                             <constraint firstItem="mfL-zR-XeM" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" id="AGF-MJ-HME"/>
+                            <constraint firstAttribute="trailing" secondItem="Y7p-py-ZgF" secondAttribute="trailing" constant="8" id="BdW-ac-h6O"/>
+                            <constraint firstItem="8Re-43-Z8P" firstAttribute="top" secondItem="9hG-P8-1Rn" secondAttribute="bottom" constant="8" id="CTL-j7-6yx"/>
                             <constraint firstItem="mfL-zR-XeM" firstAttribute="top" secondItem="AzN-4d-wmz" secondAttribute="top" id="CoI-th-Te9"/>
                             <constraint firstItem="8Re-43-Z8P" firstAttribute="top" secondItem="KiN-J2-wYI" secondAttribute="bottom" constant="8" id="DNX-e9-hhj"/>
+                            <constraint firstItem="MEk-Ir-T4t" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" constant="8" id="EEz-xp-nkB"/>
                             <constraint firstItem="KiN-J2-wYI" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" constant="8" id="HdJ-71-kIq"/>
+                            <constraint firstItem="Y7p-py-ZgF" firstAttribute="top" secondItem="4ke-S5-smv" secondAttribute="bottom" constant="155" id="Jty-9m-j64"/>
+                            <constraint firstAttribute="trailing" secondItem="MEk-Ir-T4t" secondAttribute="trailing" constant="8" id="OeX-d9-iv7"/>
+                            <constraint firstAttribute="trailing" secondItem="9hG-P8-1Rn" secondAttribute="trailing" constant="8" id="TdL-up-MB4"/>
                             <constraint firstAttribute="bottom" secondItem="mfL-zR-XeM" secondAttribute="bottom" id="Xbb-9Z-nos"/>
+                            <constraint firstItem="9hG-P8-1Rn" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" constant="8" id="a2k-WP-a3j"/>
                             <constraint firstItem="KiN-J2-wYI" firstAttribute="top" secondItem="EPy-3K-dTU" secondAttribute="bottom" constant="8" id="c88-Wb-A6q"/>
+                            <constraint firstItem="Y7p-py-ZgF" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" constant="8" id="n0G-Xa-QBY"/>
+                            <constraint firstItem="MEk-Ir-T4t" firstAttribute="top" secondItem="4ke-S5-smv" secondAttribute="bottom" constant="210" id="wrq-ew-Nws"/>
                             <constraint firstItem="EPy-3K-dTU" firstAttribute="leading" secondItem="AzN-4d-wmz" secondAttribute="leading" constant="8" id="wtN-Kg-zq3"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -224,8 +269,12 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
+                        <outlet property="finalScoreLabel" destination="MEk-Ir-T4t" id="hRE-3i-aJz"/>
+                        <outlet property="gameOverLabel" destination="Y7p-py-ZgF" id="QB9-F3-RFi"/>
                         <outlet property="gameView" destination="mfL-zR-XeM" id="847-tJ-86g"/>
+                        <outlet property="levelHeader" destination="EPy-3K-dTU" id="DFJ-Ld-uBM"/>
                         <outlet property="levelLabel" destination="KiN-J2-wYI" id="r7e-8a-6L5"/>
+                        <outlet property="scoreLabel" destination="9hG-P8-1Rn" id="JYp-cs-Lzy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7v-RA-wL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -283,8 +332,8 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kek-AL-QOH">
                                 <rect key="frame" x="8" y="156" width="584" height="383"/>
-                                <string key="text">Each round, you're presented with a series of shapes. Press the eleven-sided Hendecagon to advance to the next round! Press the wrong shape, and it's Game Over. With each level, the shapes and patterns become more complex! Can you survive all eleven levels?</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                <string key="text">Each round, you're presented with a series of shapes. Touch the eleven-sided Hendecagon to advance to the next round! Touch the wrong shape, and it's Game Over. With each level, the shapes and patterns become more complex! Can you survive all eleven levels?</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>

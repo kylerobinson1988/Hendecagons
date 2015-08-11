@@ -12,8 +12,12 @@ import AVFoundation
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var levelHeader: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var gameView: UIView!
+    @IBOutlet weak var gameOverLabel: UILabel!
+    @IBOutlet weak var finalScoreLabel: UILabel!
     
     var drumLoop = AVAudioPlayer()
     var riff = AVAudioPlayer()
@@ -46,8 +50,6 @@ class GameViewController: UIViewController {
         
     }
     
-    var scoreLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 100))
-    
     var timerBar = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 20))
     
     var currentCircles: [GameButton] = []
@@ -55,6 +57,9 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        gameOverLabel.hidden = true
+        finalScoreLabel.hidden = true
         
         drumLoop = setupAudioPlayerWithFile("drumloop", "wav")
         riff = setupAudioPlayerWithFile("riff", "wav")
@@ -80,15 +85,6 @@ class GameViewController: UIViewController {
         timerBar.backgroundColor = UIColor.whiteColor()
         
         view.addSubview(timerBar)
-        
-        scoreLabel.textColor = UIColor.whiteColor()
-        scoreLabel.font = UIFont(name: "Geomancy-Hairline", size: 80)
-        scoreLabel.text = "0"
-        scoreLabel.frame.origin.y = view.frame.height - 120
-        scoreLabel.frame.size.width = view.frame.width
-        scoreLabel.textAlignment = NSTextAlignment.Center
-        
-        view.addSubview(scoreLabel)
         
         animateNewCirclesIn()
 
@@ -229,14 +225,10 @@ class GameViewController: UIViewController {
             if currentScore == finishPoint {
                 
                 currentLevel = currentLevel + 1
-                println("The level just went up!")
-                println(currentLevel)
                 
                 UIView.animateWithDuration(0.5, animations: { () -> Void in
                 
                     self.addGradientLayer(levelAdjusted)
-                    
-                    println("The background should have just changed.")
                     
                 })
                 
@@ -259,26 +251,28 @@ class GameViewController: UIViewController {
         
         animateOldCirclesOut()
         
-        let gameOverLabel = UILabel(frame: view.frame)
-        gameOverLabel.textAlignment = .Center
-        gameOverLabel.textColor = UIColor.whiteColor()
-        gameOverLabel.text = "Game Over"
-        gameOverLabel.font = UIFont(name: "Geomancy-Hairline", size: 50)
+        gameOverLabel.hidden = false
+        finalScoreLabel.hidden = false
+        
+        finalScoreLabel.text = "\(currentScore) PoInts"
         
         gameOverLabel.alpha = 0
-        
-        view.addSubview((gameOverLabel))
+        finalScoreLabel.alpha = 0
         
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             
-            gameOverLabel.alpha = 1
+            self.gameOverLabel.alpha = 1
+            self.finalScoreLabel.alpha = 1
             self.scoreLabel.alpha = 0
+            self.levelLabel.alpha = 0
+            self.levelHeader.alpha = 0
             
         }) { (finished) -> Void in
             
             UIView.animateWithDuration(2.5, animations: { () -> Void in
                 
-                gameOverLabel.alpha = 0
+                self.finalScoreLabel.alpha = 0
+                self.gameOverLabel.alpha = 0
                 
                 }) { (finished) -> Void in
             
@@ -307,9 +301,9 @@ class GameViewController: UIViewController {
         let firstColor = backgroundColors[level]["color1"]!
         let secondColor = backgroundColors[level]["color2"]!
         
-        println("first color \(firstColor)")
-        println("second color \(secondColor)")
-                
+//        println("first color \(firstColor)")
+//        println("second color \(secondColor)")
+        
         let startPoint = CGPoint(x: 0.0, y: 1.0)
         let endPoint = CGPoint(x: 1.0, y: 0)
         
