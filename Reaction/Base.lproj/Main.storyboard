@@ -8,8 +8,12 @@
             <string>Geomancy-ExtraBold</string>
             <string>Geomancy-ExtraBold</string>
             <string>Geomancy-ExtraBold</string>
+            <string>Geomancy-ExtraBold</string>
+            <string>Geomancy-ExtraBold</string>
         </mutableArray>
         <mutableArray key="Geomancy - Hairline.otf">
+            <string>Geomancy-Hairline</string>
+            <string>Geomancy-Hairline</string>
             <string>Geomancy-Hairline</string>
             <string>Geomancy-Hairline</string>
         </mutableArray>
@@ -28,9 +32,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUA-3n-Hxs">
-                                <rect key="frame" x="8" y="498" width="584" height="94"/>
+                                <rect key="frame" x="8" y="532" width="584" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="94" id="OE1-6K-jpd"/>
+                                    <constraint firstAttribute="height" constant="60" id="OE1-6K-jpd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,18 +85,47 @@
                                     <action selector="goButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ra8-hY-Dfj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsF-Jo-a2E">
+                                <rect key="frame" x="276" y="498" width="48" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="3sU-sE-Bui"/>
+                                    <constraint firstAttribute="height" constant="23" id="VuF-Kt-p14"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmq-bX-P4S">
+                                <rect key="frame" x="18" y="532" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="69n-4s-arj"/>
+                                    <constraint firstAttribute="height" constant="50" id="n3h-CD-jFj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
+                                <state key="normal" title="??">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="helpButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="1oc-Kd-5jy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="aKx-yG-9Jx" secondAttribute="trailing" constant="30" id="20d-HE-0PP"/>
                             <constraint firstAttribute="centerY" secondItem="zPh-ft-7Mh" secondAttribute="centerY" id="EeA-yP-zqN"/>
                             <constraint firstItem="gUA-3n-Hxs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="Ghg-DY-HBG"/>
+                            <constraint firstItem="gUA-3n-Hxs" firstAttribute="top" secondItem="PsF-Jo-a2E" secondAttribute="bottom" constant="11" id="HyB-uK-Fdl"/>
                             <constraint firstAttribute="trailing" secondItem="0yD-SP-muU" secondAttribute="trailing" constant="8" id="M8f-By-SNW"/>
+                            <constraint firstAttribute="centerX" secondItem="PsF-Jo-a2E" secondAttribute="centerX" id="QCa-gH-3kM"/>
                             <constraint firstItem="0yD-SP-muU" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="8" id="W66-rc-6By"/>
                             <constraint firstAttribute="centerX" secondItem="A6L-9I-36R" secondAttribute="centerX" id="ZzA-ge-ZoC"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Tmq-bX-P4S" secondAttribute="bottom" constant="18" id="bGI-ZV-Kbp"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gUA-3n-Hxs" secondAttribute="bottom" constant="8" id="io0-ee-th3"/>
                             <constraint firstAttribute="trailing" secondItem="gUA-3n-Hxs" secondAttribute="trailing" constant="8" id="kWz-dT-zzx"/>
                             <constraint firstAttribute="centerY" secondItem="A6L-9I-36R" secondAttribute="centerY" id="mLv-L9-HKm"/>
+                            <constraint firstItem="Tmq-bX-P4S" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="18" id="u2u-MI-bCV"/>
                             <constraint firstAttribute="centerX" secondItem="zPh-ft-7Mh" secondAttribute="centerX" id="wNZ-Gk-fhh"/>
                             <constraint firstItem="0yD-SP-muU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="58" id="yMM-62-Kue"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="aKx-yG-9Jx" secondAttribute="bottom" constant="25" id="zk9-FG-2xo"/>
@@ -114,7 +147,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="cfg-lu-r1S"/>
                     <connections>
+                        <outlet property="bestLabel" destination="PsF-Jo-a2E" id="MS3-Ag-miv"/>
                         <outlet property="goLabel" destination="A6L-9I-36R" id="9fo-6e-0yg"/>
+                        <outlet property="helpButton" destination="Tmq-bX-P4S" id="1JB-5l-wdM"/>
                         <outlet property="leaderboardButton" destination="aKx-yG-9Jx" id="sXN-dl-0zT"/>
                         <outlet property="logo" destination="0yD-SP-muU" id="q43-xc-sbX"/>
                         <outlet property="rotatingHendecagon" destination="zPh-ft-7Mh" id="xAg-wI-94O"/>
@@ -123,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192" y="337"/>
+            <point key="canvasLocation" x="1199" y="337"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="VMR-B5-FDz">
@@ -215,6 +250,107 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKd-FU-CUl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="452" y="337"/>
+        </scene>
+        <!--Help View Controller-->
+        <scene sceneID="Wlo-yV-pg7">
+            <objects>
+                <viewController storyboardIdentifier="helpVC" id="I3M-d1-yqz" customClass="HelpViewController" customModule="Reaction" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RaT-Va-MDW"/>
+                        <viewControllerLayoutGuide type="bottom" id="LtH-Cl-SXm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1IP-FX-cLF" customClass="GradientView" customModule="Reaction" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hendecagons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uP0-cz-OLn">
+                                <rect key="frame" x="8" y="78" width="584" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="VTA-6Y-g9M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-ExtraBold" family="Geomancy" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME TO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFu-QS-eGR">
+                                <rect key="frame" x="8" y="28" width="584" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="vHR-2D-SZe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-Hairline" family="Geomancy" pointSize="41"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kek-AL-QOH">
+                                <rect key="frame" x="8" y="156" width="584" height="383"/>
+                                <string key="text">Each round, you're presented with a series of shapes. Press the eleven-sided Hendecagon to advance to the next round! Press the wrong shape, and it's Game Over. With each level, the shapes and patterns become more complex! Can you survive all eleven levels?</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l22-7H-HlX">
+                                <rect key="frame" x="8" y="547" width="584" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Tac-ni-ViT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Geomancy-ExtraBold" family="Geomancy" pointSize="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="I3M-d1-yqz" eventType="touchUpInside" id="u9h-el-3tP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oFu-QS-eGR" firstAttribute="leading" secondItem="1IP-FX-cLF" secondAttribute="leading" constant="8" id="8RS-Eb-GSR"/>
+                            <constraint firstAttribute="trailing" secondItem="uP0-cz-OLn" secondAttribute="trailing" constant="8" id="8jn-De-UQ3"/>
+                            <constraint firstItem="kek-AL-QOH" firstAttribute="top" secondItem="oFu-QS-eGR" secondAttribute="bottom" constant="57" id="Ft5-Tm-UrH"/>
+                            <constraint firstAttribute="trailing" secondItem="l22-7H-HlX" secondAttribute="trailing" constant="8" id="JcD-s0-yR4"/>
+                            <constraint firstAttribute="trailing" secondItem="oFu-QS-eGR" secondAttribute="trailing" constant="8" id="LqY-cz-304"/>
+                            <constraint firstItem="kek-AL-QOH" firstAttribute="leading" secondItem="1IP-FX-cLF" secondAttribute="leading" constant="8" id="Lwz-AH-oRV"/>
+                            <constraint firstItem="l22-7H-HlX" firstAttribute="leading" secondItem="1IP-FX-cLF" secondAttribute="leading" constant="8" id="Qvv-SF-5Y2"/>
+                            <constraint firstAttribute="trailing" secondItem="kek-AL-QOH" secondAttribute="trailing" constant="8" id="ZGP-3B-IPa"/>
+                            <constraint firstItem="uP0-cz-OLn" firstAttribute="top" secondItem="RaT-Va-MDW" secondAttribute="bottom" constant="58" id="aYB-Ix-4bz"/>
+                            <constraint firstItem="uP0-cz-OLn" firstAttribute="top" secondItem="RaT-Va-MDW" secondAttribute="bottom" constant="58" id="cve-Ca-JUA"/>
+                            <constraint firstItem="LtH-Cl-SXm" firstAttribute="top" secondItem="l22-7H-HlX" secondAttribute="bottom" constant="8" id="cz3-oG-sX7"/>
+                            <constraint firstItem="l22-7H-HlX" firstAttribute="top" secondItem="kek-AL-QOH" secondAttribute="bottom" constant="8" id="dgI-0E-dpv"/>
+                            <constraint firstItem="oFu-QS-eGR" firstAttribute="top" secondItem="RaT-Va-MDW" secondAttribute="bottom" constant="8" id="eGg-Hb-2Il"/>
+                            <constraint firstItem="uP0-cz-OLn" firstAttribute="leading" secondItem="1IP-FX-cLF" secondAttribute="leading" constant="8" id="znl-FC-pFj"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
+                                <point key="value" x="0.5" y="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
+                                <point key="value" x="0.0" y="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aYB-Ix-4bz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="ne6-aQ-Ocv"/>
+                    <connections>
+                        <outlet property="backButton" destination="l22-7H-HlX" id="q5d-oB-OHr"/>
+                        <outlet property="helpText" destination="kek-AL-QOH" id="ia8-bt-Ipd"/>
+                        <outlet property="hendecagonsLabel" destination="uP0-cz-OLn" id="pLj-I3-yqj"/>
+                        <outlet property="welcomeLabel" destination="oFu-QS-eGR" id="G8O-n3-Z1f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="en7-7y-YQb" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1199" y="-353"/>
         </scene>
     </scenes>
     <resources>

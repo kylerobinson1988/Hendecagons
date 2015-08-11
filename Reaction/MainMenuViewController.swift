@@ -19,6 +19,8 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
     @IBOutlet weak var goLabel: UIButton!
     @IBOutlet weak var topScoreLabel: UILabel!
     @IBOutlet weak var rotatingHendecagon: RotatingHendecagon!
+    @IBOutlet weak var helpButton: UIButton!
+    @IBOutlet weak var bestLabel: UILabel!
     
     var mainMenu = AVAudioPlayer()
     var boom = AVAudioPlayer()
@@ -35,18 +37,18 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
         
         getInfoFromParse()
         
-        rotatingHendecagon.rotate360Degrees(completionDelegate: self)
-        
         topScoreLabel.alpha = 0
-        
+
         mainMenu = setupAudioPlayerWithFile("mainMenu", "wav")
         boom = setupAudioPlayerWithFile("boom", "wav")
         
+        bestLabel.hidden = true
         goLabel.frame.size.width = 0
         goLabel.frame.size.height = 0
         goLabel.center = view.center
         goLabel.alpha = 0
         goLabel.transform = CGAffineTransformMakeScale(0.0, 0.0)
+        helpButton.center.x -= self.view.frame.height
         
         UIView.animateWithDuration(0.4, animations: { () -> Void in
             
@@ -56,12 +58,12 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
         })
         
         self.logo.center.y -= self.view.frame.height
-
+        
         UIView.animateWithDuration(2.0, animations: { () -> Void in
             
             self.logo.center.y += self.view.frame.height
             self.mainMenu.play()
-
+            
         })
         
         
@@ -79,7 +81,6 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
             }
             
         }
-        
         
     }
     
@@ -115,6 +116,8 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         
+        rotatingHendecagon.rotate360Degrees(completionDelegate: self)
+
         loadScore()
         
     }
@@ -139,6 +142,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
                                 UIView.animateWithDuration(0.4, animations: { () -> Void in
                                     
                                     self.topScoreLabel.alpha = 1
+                                    self.bestLabel.hidden = false
                                     
                                 })
                             
@@ -188,6 +192,15 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
         gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    @IBAction func helpButtonPressed(sender: AnyObject) {
+        
+        let helpVC = storyboard?.instantiateViewControllerWithIdentifier("helpVC") as! HelpViewController
+        
+        presentViewController(helpVC, animated: true, completion: nil)
+        
+    }
+    
     
     func getInfoFromParse() {
         
@@ -417,7 +430,6 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: 1.0)
         
     }
-
 
 }
 

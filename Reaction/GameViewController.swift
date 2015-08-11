@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     
     var drumLoop = AVAudioPlayer()
     var riff = AVAudioPlayer()
+    var riff2 = AVAudioPlayer()
     var recordScratch = AVAudioPlayer()
     
     var currentScore = 0 {
@@ -57,6 +58,7 @@ class GameViewController: UIViewController {
         
         drumLoop = setupAudioPlayerWithFile("drumloop", "wav")
         riff = setupAudioPlayerWithFile("riff", "wav")
+        riff2 = setupAudioPlayerWithFile("riff", "wav")
         recordScratch = setupAudioPlayerWithFile("recordScratch", "wav")
         
         drumLoop.play()
@@ -64,6 +66,7 @@ class GameViewController: UIViewController {
         drumLoop.volume = 0.7
         
         riff.volume = 1.0
+        riff2.volume = 1.0
         recordScratch.volume = 0.7
         
         println(backgroundColors)
@@ -190,7 +193,16 @@ class GameViewController: UIViewController {
             
             currentScore++
             
-            riff.play()
+
+            if riff.playing == true {
+                
+                riff2.play()
+                
+            } else {
+                
+                riff.play()
+                
+            }
             
             let reportScore = GKScore(leaderboardIdentifier: "hendecagonsTapped")
             

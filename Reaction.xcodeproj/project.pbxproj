@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		91031FD71B44803D00F2FE36 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91031FD61B44803D00F2FE36 /* GameKit.framework */; };
+		9127AF921B7A4A1D005FB1CF /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9127AF911B7A4A1D005FB1CF /* HelpViewController.swift */; };
 		9146FCE71B60428E0013D73B /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9146FCE61B60428E0013D73B /* View.swift */; };
 		9146FCE91B6060600013D73B /* hendecagon_still.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9146FCE81B6060600013D73B /* hendecagon_still.jpg */; };
 		9146FD4F1B6905840013D73B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9146FD491B6905840013D73B /* Bolts.framework */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		91031FD61B44803D00F2FE36 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		9127AF911B7A4A1D005FB1CF /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		9146FCE61B60428E0013D73B /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9146FCE81B6060600013D73B /* hendecagon_still.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hendecagon_still.jpg; sourceTree = "<group>"; };
 		9146FD491B6905840013D73B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				91D110D41B4423EF00F5C51A /* MainMenuViewController.swift */,
 				91D110FA1B44396E00F5C51A /* GameViewController.swift */,
 				9146FD6B1B6934150013D73B /* LevelInfo.swift */,
+				9127AF911B7A4A1D005FB1CF /* HelpViewController.swift */,
 				91D110D21B4423EF00F5C51A /* AppDelegate.swift */,
 				91D110F21B4426FD00F5C51A /* IBDesignable */,
 				91D110D01B4423EF00F5C51A /* Supporting Files */,
@@ -363,6 +366,7 @@
 				9146FD6C1B6934150013D73B /* LevelInfo.swift in Sources */,
 				91D110D51B4423EF00F5C51A /* MainMenuViewController.swift in Sources */,
 				91D110D31B4423EF00F5C51A /* AppDelegate.swift in Sources */,
+				9127AF921B7A4A1D005FB1CF /* HelpViewController.swift in Sources */,
 				9146FCE71B60428E0013D73B /* View.swift in Sources */,
 				91B1B5561B47758B00958D38 /* RotatingHendecagon.swift in Sources */,
 				91D110F41B44271500F5C51A /* GradientView.swift in Sources */,
