@@ -206,7 +206,7 @@ class GameViewController: UIViewController {
             
             GKScore.reportScores([reportScore], withCompletionHandler: { (error) -> Void in
                 
-//                println("reported")
+                println("reported")
                 
             })
             
@@ -238,7 +238,7 @@ class GameViewController: UIViewController {
             
         } else {
             
-            gameOver()
+            runTimer(0)
             
         }
         

@@ -54,6 +54,8 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
             
             self.goLabel.alpha = 1
             self.goLabel.transform = CGAffineTransformMakeScale(1.0, 1.0)
+            self.bestLabel.hidden = false
+            self.topScoreLabel.alpha = 1
             
         })
         
@@ -119,12 +121,16 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
         rotatingHendecagon.rotate360Degrees(completionDelegate: self)
 
         loadScore()
-        
+                
     }
     
     func loadScore() {
         
-        if GKLocalPlayer.localPlayer().authenticated == false { return }
+        if GKLocalPlayer.localPlayer().authenticated == false {
+            
+            return
+        
+        }
         
         GKLeaderboard.loadLeaderboardsWithCompletionHandler { (leaderboards, error) -> Void in
             
@@ -169,6 +175,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
                 UIView.animateWithDuration(2.5, animations: { () -> Void in
                     
                     navigationController?.viewControllers = [gameVC]
+//                    navigationController?.pushViewController(gameVC, animated: false)
                     
                 })
                 
@@ -214,7 +221,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
             
             if error == nil {
                 
-                println("No level errors.")
+                //println("No level errors.")
                 
                 if let objects = objects as? [PFObject] {
                     
@@ -385,9 +392,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
                     }
                     
                     self.parseInfo2 = true
-                    println("Background colors!")
 //                    println(backgroundColors)
-                    println("Background coordinates!")
 //                    println(backgroundCoordinates)
 
                 }
