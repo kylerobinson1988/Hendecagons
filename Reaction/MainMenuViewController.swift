@@ -35,6 +35,22 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        GKLocalPlayer.localPlayer().authenticateHandler = { (viewController, error) -> Void in
+            
+            if viewController != nil {
+                
+                self.presentViewController(viewController, animated: true, completion: nil)
+                
+            } else {
+                
+                println(error)
+                println(GKLocalPlayer.localPlayer().authenticated)
+                self.loadScore()
+                
+            }
+            
+        }
+        
         getInfoFromParse()
         
         topScoreLabel.alpha = 0
@@ -54,8 +70,8 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
             
             self.goLabel.alpha = 1
             self.goLabel.transform = CGAffineTransformMakeScale(1.0, 1.0)
-            self.bestLabel.hidden = false
-            self.topScoreLabel.alpha = 1
+            //self.bestLabel.hidden = false
+            //self.topScoreLabel.alpha = 1
             
         })
         
@@ -67,22 +83,6 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
             self.mainMenu.play()
             
         })
-        
-        
-        GKLocalPlayer.localPlayer().authenticateHandler = { (viewController, error) -> Void in
-            
-            if viewController != nil {
-                
-                self.presentViewController(viewController, animated: true, completion: nil)
-                
-            } else {
-                
-                println(GKLocalPlayer.localPlayer().authenticated)
-                self.loadScore()
-                
-            }
-            
-        }
         
     }
     
@@ -121,7 +121,7 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
         rotatingHendecagon.rotate360Degrees(completionDelegate: self)
 
         loadScore()
-                
+        
     }
     
     func loadScore() {
@@ -175,7 +175,6 @@ class MainMenuViewController: UIViewController, GKGameCenterControllerDelegate {
                 UIView.animateWithDuration(2.5, animations: { () -> Void in
                     
                     navigationController?.viewControllers = [gameVC]
-//                    navigationController?.pushViewController(gameVC, animated: false)
                     
                 })
                 
